@@ -22,9 +22,6 @@ COPY --from=composer:2.8.8 /usr/bin/composer /usr/bin/composer
 
 
 WORKDIR /var/www/html
-
-COPY composer.json composer.lock ./
-RUN composer install --no-dev --optimize-autoloader
 COPY . .
 
 RUN chown -R www-data:www-data /var/www/html \

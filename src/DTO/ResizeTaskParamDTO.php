@@ -26,6 +26,9 @@ class ResizeTaskParamDTO implements CommandTaskParamDTO
         return $this->height;
     }
 
+    /**
+     * @return array<string,int>
+     */
     public function toArray(): array
     {
         return [

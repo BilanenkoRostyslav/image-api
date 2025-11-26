@@ -14,7 +14,7 @@ class ImageTaskFactory
         $task->setOperation($operation);
         $task->setImageLink($imageUrl);
         $task->setStatus(Status::CREATED);
-        
+
         return $task;
     }
 }

@@ -7,7 +7,7 @@ use App\Entity\ImageTaskParam;
 
 class ImageTaskParamFactory
 {
-    public function create(string $name, string $value, ImageTask $task): ImageTaskParam
+    public function create(string $name, string|int $value, ImageTask $task): ImageTaskParam
     {
         $param = new ImageTaskParam();
         $param->setTask($task);

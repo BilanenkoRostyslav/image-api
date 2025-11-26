@@ -20,6 +20,9 @@ class ConvertTaskParamDTO implements CommandTaskParamDTO
         return $this->format;
     }
 
+    /**
+     * @return array<string, string>
+     */
     public function toArray(): array
     {
         return [

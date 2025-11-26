@@ -20,7 +20,12 @@ RUN apt-get update && apt-get install -y \
 
 COPY --from=composer:2.8.8 /usr/bin/composer /usr/bin/composer
 
+
 WORKDIR /var/www/html
+
+COPY composer.json composer.lock ./
+RUN composer install --no-dev --optimize-autoloader
+COPY . .
 
 RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 755 /var/www/html

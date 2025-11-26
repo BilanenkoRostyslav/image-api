@@ -22,9 +22,4 @@ class ImageDTO
     {
         $this->image = $image;
     }
-
-    public function get()
-    {
-
-    }
 }

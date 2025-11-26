@@ -8,10 +8,7 @@ use Doctrine\DBAL\LockMode;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method ImageTaskParam|null find(mixed $id, LockMode|int|null $lockMode = null, int|null $lockVersion = null)
- * @method ImageTaskParam[] findBy(array $criteria, array|null $orderBy = null, int|null $limit = null, int|null $offset = null)
- * @method ImageTaskParam[] findAll()
- * @method ImageTaskParam|null findOneBy(array $criteria, array|null $orderBy = null)
+ * @extends ServiceEntityRepository<ImageTaskParam>
  */
 class ImageTaskParamRepository extends ServiceEntityRepository
 {

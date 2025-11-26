@@ -8,6 +8,7 @@ use App\DTO\ResizeTaskParamDTO;
 use App\Entity\ImageTask;
 use App\Handlers\TaskParamHandler\ConvertTaskHandler;
 use App\Handlers\TaskParamHandler\ResizeTaskHandler;
+use LogicException;
 
 class ImageTaskParamDispatcher
 {
@@ -23,6 +24,7 @@ class ImageTaskParamDispatcher
         match ($dto::class) {
             ConvertTaskParamDTO::class => $this->convertTaskHandler->handle($dto, $task),
             ResizeTaskParamDTO::class => $this->resizeTaskHandler->handle($dto, $task),
+            default => throw new LogicException($dto::class . " doesnt have a handler"),
         };
     }
 }

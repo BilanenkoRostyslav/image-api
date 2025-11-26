@@ -22,7 +22,9 @@ class ImageTask
     private Status $status;
     #[Orm\Column(name: 'operation', enumType: ImageTaskOperation::class)]
     private ImageTaskOperation $operation;
-
+    /**
+     * @var Collection<int, ImageTaskParam>|null
+     */
     #[Orm\OneToMany(targetEntity: ImageTaskParam::class, mappedBy: 'task', orphanRemoval: true)]
     private ?Collection $params = null;
 
@@ -66,11 +68,17 @@ class ImageTask
         $this->operation = $operation;
     }
 
-    public function getParams(): Collection
+    /**
+     * @return Collection<int, ImageTaskParam>|null
+     */
+    public function getParams(): ?Collection
     {
         return $this->params;
     }
 
+    /**
+     * @param Collection<int, ImageTaskParam> $params
+     */
     public function setParams(Collection $params): void
     {
         $this->params = $params;

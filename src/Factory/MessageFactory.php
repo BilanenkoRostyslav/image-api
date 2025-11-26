@@ -7,6 +7,9 @@ use App\Message\ImageTaskMessage;
 
 class MessageFactory
 {
+    /**
+     * @param array<string, string|int> $params
+     */
     public function create(string $imageUrl, ImageTaskOperation $taskOperation, array $params): ImageTaskMessage
     {
         return new ImageTaskMessage(

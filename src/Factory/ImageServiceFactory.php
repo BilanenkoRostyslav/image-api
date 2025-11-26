@@ -18,7 +18,7 @@ class ImageServiceFactory
 
     public function create(): ImageServiceInterface
     {
-        if ($this->key == '') {
+        if ($this->key == null) {
             return $this->directoryImageService;
         }
         return $this->s3ImageService;

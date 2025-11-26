@@ -28,6 +28,9 @@ class RequestFormDataResolver implements ValueResolverInterface
         return count($argument->getAttributes(RequestFormDataBody::class, ArgumentMetadata::IS_INSTANCEOF)) > 0;
     }
 
+    /**
+     * @return iterable<object>
+     */
     public function resolve(Request $request, ArgumentMetadata $argument): iterable
     {
         if (!$this->supports($request, $argument)) {

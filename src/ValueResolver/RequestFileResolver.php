@@ -26,13 +26,16 @@ class RequestFileResolver implements ValueResolverInterface
         return count($argument->getAttributes(RequestImageBody::class, ArgumentMetadata::IS_INSTANCEOF)) > 0;
     }
 
+    /**
+     * @return iterable<ImageDTO>
+     */
     public function resolve(Request $request, ArgumentMetadata $argument): iterable
     {
         if (!$this->supports($request, $argument)) {
             return [];
         }
         /**
-         * @var $attribute RequestImageBody
+         * @var  RequestImageBody $attribute
          */
         $attribute = $argument->getAttributes(RequestImageBody::class, ArgumentMetadata::IS_INSTANCEOF)[0];
         $data = $request->files->get($attribute->getFilaName());

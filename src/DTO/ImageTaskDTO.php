@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Service;
+namespace App\DTO;
 
 class ImageTaskDTO
 {

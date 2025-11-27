@@ -2,13 +2,12 @@
 
 namespace App\Service;
 
+use App\DTO\ImageTaskDTO;
 use App\DTO\Interface\CommandTaskParamDTO;
-use App\Entity\ImageTask;
 use App\Enum\ImageTaskOperation;
 use App\Factory\ImageTaskFactory;
 use App\Factory\MessageFactory;
 use App\Handlers\Dispatcher\ImageTaskParamDispatcher;
-use App\Repository\ImageTaskParamRepository;
 use App\Repository\ImageTaskRepository;
 use Symfony\Component\Messenger\Exception\ExceptionInterface;
 use Symfony\Component\Messenger\MessageBusInterface;
